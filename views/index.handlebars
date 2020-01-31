@@ -1,0 +1,43 @@
+<p style="text-align:center;"><img src="assets/img/burger-drop.gif" height="250" width="250"></p>
+
+<h1 style="text-align:center;">Eat-Da-Burger!</h1>
+
+
+
+<div class="row"><!-- This section works! -->
+    <div class="col-sm-6">
+        <h2>Burgers!</h2>
+        <ul>
+            {{#each burgers}}
+                {{#unless devoured}}
+                    {{this.id}} - {{this.burger_name}} 
+                    <button type="button" class="devourburger" data-id="{{this.id}}" data-newDevoured="{{devour}}">DEVOUR!</button><br>
+                {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+<div class="row"> <!-- Verify this section! -->
+    <div class="col-sm-6">
+        <h2>Devoured!</h2>
+        <ul>
+            {{#each burgers}}
+                {{#if devoured}}
+                    {{this.id}} - {{this.burger_name}}
+                    <button type="button" class="deleteburger" data-id="{{this.id}}" data-newDevoured="{{devour}}">DELETE!</button><br>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+<h2>Add-Da-Burger</h2>
+
+<form class="create-form"> <!-- This section works! -->
+    <div class="form-group">
+        <label>Burger name:</label>
+        <input type="text" id="addburger" name="burger">
+        <button type="submit">SUBMIT</button>
+    </div> 
+</form>

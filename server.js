@@ -8,7 +8,7 @@ var app = express();
 app.use(express.static("public"));
 
 //parse body as JSON
-app.use(express.urlencoed({ expteded: true }));
+app.use(express.urlencoed({ expected: true }));
 app.use(express.json());
 
 //set up handlbar
@@ -25,5 +25,5 @@ app.use(routes);
 //start server
 app.listen(PORT, function() {
     //console log that the server has started
-    console.log("Server listening on: http://locailhost:" = PORT);
+    console.log("Server listening on: http://localhost:" = PORT);
 });
