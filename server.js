@@ -8,7 +8,7 @@ var app = express();
 app.use(express.static("public"));
 
 //parse body as JSON
-app.use(express.urlencoed({ expected: true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //set up handlbar
@@ -18,12 +18,12 @@ app.engine("handlebars", exphbs({ defaultLayout: "main"}))
 app.set("veiw engine", "handlebars");
 
 //import routes and give server access
-var routes = require("./controllers/burgers_controllers.js");
+var routes = require("./controller/burgers_controller.js");
 
 app.use(routes);
 
 //start server
 app.listen(PORT, function() {
     //console log that the server has started
-    console.log("Server listening on: http://localhost:" = PORT);
+    console.log("Server listening on: http://localhost:" + PORT);
 });
